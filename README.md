@@ -1,5 +1,3 @@
-# ⚪ CUADERNILLO GRIS
-
 ## Manual Técnico y Arquitectura Externa (Firebase y Estructura)
 
 **Proyecto:** Juego-Contactos (Futura Red Social para el Gremio de la Discapacidad)
