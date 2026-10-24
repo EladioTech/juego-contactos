@@ -1,0 +1,16 @@
+# Archivos del sistema operativo (Windows/Mac)
+.DS_Store
+Thumbs.db
+
+# Configuración de VS Code (opcional, pero recomendado)
+.vscode/
+
+# Archivos de registro y temporales
+*.log
+*.tmp
+
+# Si algún día añades Node.js al proyecto
+node_modules/
+
+# Archivos de configuración local (si tuvieras uno)
+# .env
