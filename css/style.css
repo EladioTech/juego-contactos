@@ -1,0 +1,201 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+#game-container {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Cabecera */
+#perfil-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #2a2a2a;
+    border-bottom: 1px solid #333;
+}
+
+#avatar-otro {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ff69b4;
+    /* Rosa */
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.info h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    color: #ff69b4;
+    /* Rosa */
+}
+
+/* Barra de confianza */
+.barra-progreso {
+    width: 100px;
+    height: 6px;
+    background-color: #444;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.barra-fill {
+    height: 100%;
+    background-color: #ff69b4;
+    /* Rosa */
+    width: 10%;
+    /* Empieza al 10% */
+    transition: width 0.5s ease;
+}
+
+/* Chat */
+#chat-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mensaje {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    line-height: 1.4;
+    font-size: 0.95em;
+}
+
+.mensaje.otro {
+    background-color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+
+/* (Y recuerda borrar ese bloque antes de que aparezcan las opciones nuevas, igual que tenías en el código anterior). */
+.mensaje.yo {
+    background-color: var(--mi-color, #3a7bd5);
+    /* Usa la variable, o azul por defecto */
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+/* Opciones */
+#opciones-container {
+    padding: 15px;
+    background-color: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.opcion-btn {
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.opcion-btn:hover {
+    background-color: #444;
+    border-color: #3a7bd5;
+    /* Azul en vez de rosa */
+}
+
+.escribiendo {
+    display: flex;
+    gap: 4px;
+    padding: 12px 16px;
+    background-color: #333;
+    border-radius: 15px;
+    border-bottom-left-radius: 2px;
+    align-self: flex-start;
+    width: fit-content;
+}
+
+.escribiendo span {
+    width: 6px;
+    height: 6px;
+    background-color: #aaa;
+    border-radius: 50%;
+    animation: rebote 1.4s infinite ease-in-out both;
+}
+
+.escribiendo span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.escribiendo span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes rebote {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+#estado-sala {
+    margin-left: auto; 
+    font-size: 1.1em; /* Un poco más grande */
+    font-weight: bold;
+    color: #4CAF50; /* Verde brillante */
+    background-color: rgba(76, 175, 80, 0.2); /* Un fondo verde transparente */
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid #4CAF50;
+}
+
+#perfil-container {
+    display: flex; /* Se ocultará con JS */
+    color: white;
+}
+
+/* Clases para el nuevo HTML */
+.oculto { display: none !important; }
+.pantalla-centrada { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+.campo-formulario { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+.campo-formulario input, .campo-formulario select { padding: 10px; border-radius: 5px; border: none; width: 100%; max-width: 250px; background-color: #333; color: white; }
+.btn-destacado { background-color: #ff69b4; color: white; border: none; font-weight: bold; }
+
+/* Ajustes del header */
+#perfil-header {
+    display: flex; 
+    align-items: center; 
+    padding: 15px; 
+    background-color: #2a2a2a; 
+    border-bottom: 1px solid #333;
+}
+#perfil-header img {
+    width: 50px; height: 50px; border-radius: 50%; 
+    border: 2px solid var(--mi-color, #3a7bd5); 
+    margin-right: 15px; object-fit: cover;
+}
+#perfil-header .info { flex: 1; }
+#perfil-header h2 { margin: 0; font-size: 1.1em; color: #fff; }
+#estado-sala { font-size: 0.8em; color: #888; }

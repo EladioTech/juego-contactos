@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego-Contactos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- PANTALLA DE PERFIL -->
+    <div id="perfil-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background-color: #121212;">
+        <h1>Tu Perfil</h1>
+        <p style="color: #aaa;">Así te verán los demás.</p>
+        <div style="margin: 20px 0;">
+            <input type="text" id="input-alias" placeholder="Tu alias (ej. Alex)" style="padding: 10px; border-radius: 5px; border: none; width: 250px;">
+        </div>
+        <div style="margin-bottom: 20px;">
+            <input type="text" id="input-foto" placeholder="URL de tu foto (http://...)" style="padding: 10px; border-radius: 5px; border: none; width: 250px;">
+        </div>
+        <div style="margin-bottom: 20px;">
+            <label style="color: white; margin-right: 10px;">Soy:</label>
+            <select id="select-genero" style="padding: 10px; border-radius: 5px; border: none;">
+                <option value="chico">Chico</option>
+                <option value="chica">Chica</option>
+            </select>
+        </div>
+        <button id="btn-guardar-perfil" class="opcion-btn" style="width: 250px; background-color: #ff69b4; color: white; border: none; font-weight: bold;">Guardar y Continuar</button>
+    </div>
+
+    <!-- PANTALLA DE ENTRADA (LOBBY) -->
+    <div id="lobby-container" style="display: none; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+        <h1>Juego-Contactos</h1>
+        <p>Conecta con alguien en tiempo real</p>
+        <button id="btn-crear-sala" class="opcion-btn" style="width: 200px; margin-bottom: 10px;">Crear Sala Nueva</button>
+        <div style="margin-top: 20px;">
+            <input type="text" id="input-codigo" placeholder="Código de sala" style="padding: 10px; border-radius: 5px; border: none;">
+            <button id="btn-unirse-sala" class="opcion-btn" style="width: 100px;">Unirse</button>
+        </div>
+    </div>
+
+    <!-- PANTALLA DEL JUEGO -->
+    <div id="game-container" style="display: none;">
+        <header id="perfil-header" style="display: flex; align-items: center; padding: 15px; background-color: #2a2a2a; border-bottom: 1px solid #333;">
+            <!-- TU foto y TU nombre -->
+            <img id="avatar-yo" src="assets/avatar.jpg" alt="Mi Avatar" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #3a7bd5; margin-right: 15px; object-fit: cover;">
+            <div class="info" style="flex: 1;">
+                <h2 id="nombre-yo" style="font-size: 1.1em; margin: 0; color: #fff;">Tú</h2>
+            </div>
+            <div id="estado-sala" style="font-size: 0.8em; color: #888;">Sala: ---</div>
+        </header>
+
+        <main id="chat-container"></main>
+        <footer id="opciones-container"></footer>
+        
+        <div id="chat-libre-container" style="display: none; padding: 15px; background-color: #2a2a2a; border-top: 1px solid #333;">
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="input-mensaje-libre" placeholder="Escribe un mensaje..." style="flex: 1; padding: 12px; border-radius: 20px; border: none; background-color: #333; color: white;">
+                <button id="btn-enviar-mensaje" style="padding: 0 20px; border-radius: 20px; border: none; background-color: var(--mi-color, #3a7bd5); color: white; font-weight: bold; cursor: pointer;">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <script src="js/story.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
