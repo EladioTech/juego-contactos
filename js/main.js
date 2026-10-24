@@ -27,6 +27,10 @@ window.onload = () => {
         GameEngine.miGenero = genero;
         GameEngine.miAlias = alias;
         GameEngine.miFoto = foto || "assets/avatar.jpg";
+          // NUEVO: Guardar la búsqueda y activar el módulo
+        GameEngine.miBusqueda = document.getElementById('select-busqueda').value;
+        MatchModule.entrarAlMuro();
+        MatchModule.escucharPropuestas();
 
         document.getElementById('perfil-container').style.display = 'none';
         document.getElementById('lobby-container').style.display = 'flex';

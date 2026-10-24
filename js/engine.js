@@ -22,6 +22,11 @@ const GameEngine = {
         document.getElementById('lobby-container').style.display = 'none';
         document.getElementById('game-container').style.display = 'flex';
         document.getElementById('estado-sala').innerText = "Sala: " + this.salaId;
+        // Ocultar el cartel de match si estaba visible al entrar al chat
+        const notiMatch = document.getElementById('notificacion-match');
+        if (notiMatch) {
+            notiMatch.style.display = 'none';
+        }
 
         // Pintar TUS datos en la cabecera
         document.getElementById('nombre-yo').innerText = this.miAlias;
